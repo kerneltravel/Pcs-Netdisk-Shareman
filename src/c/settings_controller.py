@@ -44,7 +44,8 @@ class Settings(QDialog, Ui_PanSearcher):
         
     @pyqtSlot()
     def on_btnAddPcsApp_clicked(self):
-        newItem = QTableWidgetItem( self.data.interface_doSomeThing())
+        newItem = QTableWidgetItem()
+        newItem.setCheckState(Qt.Unchecked)
         self.tblPcsSet.setItem(self.curRow, 0, newItem);
         self.curRow += 1
     pass
@@ -56,8 +57,12 @@ class Settings(QDialog, Ui_PanSearcher):
             self.populateUiSearchResult(results)
     
     def populateUiSearchResult(self, results):
+        self.tblSearchResult.clearContents()
         self.tblSearchResult.setRowCount(len(results))
-        
+        for row in range(len(results)):
+            newItem = QTableWidgetItem()
+            newItem.setCheckState(Qt.Unchecked)
+            self.tblSearchResult.setItem(row, 0, newItem)
         pass
 '''
 url     -> http://pan.baidu.com/share/link?fid=358851085&shareid=4174481751&uk=2
