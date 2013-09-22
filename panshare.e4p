@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-4.6.dtd">
+<!-- eric4 project file for project panshare -->
+<!-- Saved: 2013-09-22, 14:27:31 -->
+<!-- Copyright (C) 2013 kerneltravel, kjpioo2006@gmail.com -->
+<Project version="4.6">
+  <Language></Language>
+  <ProgLanguage mixed="0">Python</ProgLanguage>
+  <ProjectType>PySide</ProjectType>
+  <Description>百度网盘文件分享的搜索和下载工具！</Description>
+  <Version>0.1</Version>
+  <Author>kerneltravel</Author>
+  <Email>kjpioo2006@gmail.com</Email>
+  <Sources>
+    <Source>src/main.py</Source>
+    <Source>src/ui/Ui_designer_generated.py</Source>
+    <Source>__init__.py</Source>
+    <Source>src/c/settings_controller.py</Source>
+    <Source>src/c/__init__.py</Source>
+    <Source>src/m/mydatawrapper.py</Source>
+    <Source>src/m/__init__.py</Source>
+  </Sources>
+  <Forms>
+    <Form>src/ui/designer_generated.ui</Form>
+  </Forms>
+  <Translations>
+  </Translations>
+  <Resources>
+  </Resources>
+  <Interfaces>
+  </Interfaces>
+  <Others>
+  </Others>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.ui" type="FORMS" />
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES" />
+    <FiletypeAssociation pattern="*.qm" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES" />
+    <FiletypeAssociation pattern="*.pyw" type="SOURCES" />
+    <FiletypeAssociation pattern="*.ui.h" type="FORMS" />
+    <FiletypeAssociation pattern="*.ts" type="TRANSLATIONS" />
+    <FiletypeAssociation pattern="*.py" type="SOURCES" />
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES" />
+  </FiletypeAssociations>
+</Project>

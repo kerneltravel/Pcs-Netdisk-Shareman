@@ -8,12 +8,15 @@ import sys
 #print sys.getdefaultencoding()
 from ctypes import *
 
-from PyQt4 import QtGui
-from PyQt4.QtGui import *
-from PyQt4 import QtCore
-from PyQt4.QtCore import pyqtSlot, Qt, QPoint, QTime, QTimer, QTextCodec
-from PyQt4.QtCore import QTextDecoder, QByteArray, QString
-from PyQt4.QtGui import QApplication, QMainWindow, QTableWidgetItem, QKeyEvent, QTextCursor
+from PySide import QtGui
+from PySide.QtGui import *
+from PySide import QtCore
+from PySide.QtCore import Qt, QPoint, QTime, QTimer, QTextCodec
+from PySide.QtCore import QTextDecoder, QByteArray
+from PySide.QtGui import QApplication, QMainWindow, QTableWidgetItem, QKeyEvent, QTextCursor
+
+from PySide.QtCore import Signal as pyqtSignal
+from PySide.QtCore import Slot as pyqtSlot
 
 from ui.Ui_designer_generated import Ui_Settings
 from m.mydatawrapper import MyDataWrapper
@@ -24,8 +27,8 @@ class Settings(QDialog, Ui_Settings):
     def __init__(self, parent=None):
         super(Settings,self).__init__(parent)
         self.setupUi(self)      
-        self.initUi()
         self.initData()
+        self.initUi()
         
     def initUi(self):
         #QTimer.singleShot(0,self.searchWords,QtCore.SLOT(self.searchWords.setFocus()))

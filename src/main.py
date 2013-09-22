@@ -8,12 +8,12 @@ import sys
 #print sys.getdefaultencoding()
 from ctypes import *
 
-from PyQt4 import QtGui
-from PyQt4.QtGui import *
-from PyQt4 import QtCore
-from PyQt4.QtCore import pyqtSlot, Qt, QPoint, QTime, QTimer, QTextCodec
-from PyQt4.QtCore import QTextDecoder, QByteArray, QString
-from PyQt4.QtGui import QApplication, QMainWindow, QTableWidgetItem, QKeyEvent, QTextCursor
+from PySide import QtGui
+from PySide.QtGui import *
+from PySide import QtCore
+from PySide.QtCore import Qt, QPoint, QTime, QTimer, QTextCodec
+from PySide.QtCore import QTextDecoder, QByteArray
+from PySide.QtGui import QApplication, QMainWindow, QTableWidgetItem, QKeyEvent, QTextCursor
 
 from c.settings_controller import Settings
 

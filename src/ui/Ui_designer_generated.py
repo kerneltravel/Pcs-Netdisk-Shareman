@@ -1,34 +1,29 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'D:\tmp\python\pyqt_framework\src\ui\designer_generated.ui'
+# Form implementation generated from reading ui file 'D:\tmp\baidu\pcs_auto_downloader\pyqt_APPframework_mvc\src\ui\designer_generated.ui'
 #
-# Created: Sat Aug 03 09:14:53 2013
-#      by: PyQt4 UI code generator 4.9.4
+# Created: Sun Sep 22 14:03:18 2013
+#      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt4 import QtCore, QtGui
-
-try:
-    _fromUtf8 = QtCore.QString.fromUtf8
-except AttributeError:
-    _fromUtf8 = lambda s: s
+from PySide import QtCore, QtGui
 
 class Ui_Settings(object):
     def setupUi(self, Settings):
-        Settings.setObjectName(_fromUtf8("Settings"))
+        Settings.setObjectName("Settings")
         Settings.resize(606, 527)
         self.gridLayout = QtGui.QGridLayout(Settings)
-        self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
+        self.gridLayout.setObjectName("gridLayout")
         self.verticalLayout_3 = QtGui.QVBoxLayout()
-        self.verticalLayout_3.setObjectName(_fromUtf8("verticalLayout_3"))
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.verticalLayout_2 = QtGui.QVBoxLayout()
-        self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label = QtGui.QLabel(Settings)
-        self.label.setObjectName(_fromUtf8("label"))
+        self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
         self.tblLoginSet = QtGui.QTableWidget(Settings)
-        self.tblLoginSet.setObjectName(_fromUtf8("tblLoginSet"))
+        self.tblLoginSet.setObjectName("tblLoginSet")
         self.tblLoginSet.setColumnCount(2)
         self.tblLoginSet.setRowCount(0)
         item = QtGui.QTableWidgetItem()
@@ -38,12 +33,12 @@ class Ui_Settings(object):
         self.verticalLayout_2.addWidget(self.tblLoginSet)
         self.verticalLayout_3.addLayout(self.verticalLayout_2)
         self.verticalLayout = QtGui.QVBoxLayout()
-        self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
+        self.verticalLayout.setObjectName("verticalLayout")
         self.label_2 = QtGui.QLabel(Settings)
-        self.label_2.setObjectName(_fromUtf8("label_2"))
+        self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
         self.tblPcsSet = QtGui.QTableWidget(Settings)
-        self.tblPcsSet.setObjectName(_fromUtf8("tblPcsSet"))
+        self.tblPcsSet.setObjectName("tblPcsSet")
         self.tblPcsSet.setColumnCount(3)
         self.tblPcsSet.setRowCount(0)
         item = QtGui.QTableWidgetItem()
@@ -55,14 +50,14 @@ class Ui_Settings(object):
         self.tblPcsSet.horizontalHeader().setCascadingSectionResizes(False)
         self.verticalLayout.addWidget(self.tblPcsSet)
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.horizontalLayout = QtGui.QHBoxLayout()
-        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+        self.horizontalLayout.setObjectName("horizontalLayout")
         self.btnAddPcsApp = QtGui.QPushButton(Settings)
-        self.btnAddPcsApp.setObjectName(_fromUtf8("btnAddPcsApp"))
+        self.btnAddPcsApp.setObjectName("btnAddPcsApp")
         self.horizontalLayout.addWidget(self.btnAddPcsApp)
         self.btnDelPcsApp = QtGui.QPushButton(Settings)
-        self.btnDelPcsApp.setObjectName(_fromUtf8("btnDelPcsApp"))
+        self.btnDelPcsApp.setObjectName("btnDelPcsApp")
         self.horizontalLayout.addWidget(self.btnDelPcsApp)
         self.horizontalLayout_2.addLayout(self.horizontalLayout)
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
@@ -72,7 +67,7 @@ class Ui_Settings(object):
         self.buttonBox = QtGui.QDialogButtonBox(Settings)
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
         self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel|QtGui.QDialogButtonBox.Ok)
-        self.buttonBox.setObjectName(_fromUtf8("buttonBox"))
+        self.buttonBox.setObjectName("buttonBox")
         self.verticalLayout_3.addWidget(self.buttonBox)
         self.verticalLayout_3.setStretch(0, 3)
         self.verticalLayout_3.setStretch(1, 7)
@@ -80,24 +75,19 @@ class Ui_Settings(object):
         self.gridLayout.addLayout(self.verticalLayout_3, 0, 0, 1, 1)
 
         self.retranslateUi(Settings)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("accepted()")), Settings.accept)
-        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL(_fromUtf8("rejected()")), Settings.reject)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL("accepted()"), Settings.accept)
+        QtCore.QObject.connect(self.buttonBox, QtCore.SIGNAL("rejected()"), Settings.reject)
         QtCore.QMetaObject.connectSlotsByName(Settings)
 
     def retranslateUi(self, Settings):
         Settings.setWindowTitle(QtGui.QApplication.translate("Settings", "current user settings", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("Settings", "my login:", None, QtGui.QApplication.UnicodeUTF8))
-        item = self.tblLoginSet.horizontalHeaderItem(0)
-        item.setText(QtGui.QApplication.translate("Settings", "user name", None, QtGui.QApplication.UnicodeUTF8))
-        item = self.tblLoginSet.horizontalHeaderItem(1)
-        item.setText(QtGui.QApplication.translate("Settings", "password", None, QtGui.QApplication.UnicodeUTF8))
+        self.tblLoginSet.horizontalHeaderItem(0).setText(QtGui.QApplication.translate("Settings", "user name", None, QtGui.QApplication.UnicodeUTF8))
+        self.tblLoginSet.horizontalHeaderItem(1).setText(QtGui.QApplication.translate("Settings", "password", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("Settings", "my pcs netdisk info:", None, QtGui.QApplication.UnicodeUTF8))
-        item = self.tblPcsSet.horizontalHeaderItem(0)
-        item.setText(QtGui.QApplication.translate("Settings", "app name", None, QtGui.QApplication.UnicodeUTF8))
-        item = self.tblPcsSet.horizontalHeaderItem(1)
-        item.setText(QtGui.QApplication.translate("Settings", "app screct", None, QtGui.QApplication.UnicodeUTF8))
-        item = self.tblPcsSet.horizontalHeaderItem(2)
-        item.setText(QtGui.QApplication.translate("Settings", "access token", None, QtGui.QApplication.UnicodeUTF8))
+        self.tblPcsSet.horizontalHeaderItem(0).setText(QtGui.QApplication.translate("Settings", "app name", None, QtGui.QApplication.UnicodeUTF8))
+        self.tblPcsSet.horizontalHeaderItem(1).setText(QtGui.QApplication.translate("Settings", "app screct", None, QtGui.QApplication.UnicodeUTF8))
+        self.tblPcsSet.horizontalHeaderItem(2).setText(QtGui.QApplication.translate("Settings", "access token", None, QtGui.QApplication.UnicodeUTF8))
         self.btnAddPcsApp.setText(QtGui.QApplication.translate("Settings", "add", None, QtGui.QApplication.UnicodeUTF8))
         self.btnDelPcsApp.setText(QtGui.QApplication.translate("Settings", "delete", None, QtGui.QApplication.UnicodeUTF8))
 
