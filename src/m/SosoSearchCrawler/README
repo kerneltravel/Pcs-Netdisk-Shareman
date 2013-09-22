@@ -1,0 +1,18 @@
+This is a simple soso.com search results crawler, NOW is just for getting Baidu PCS shared-files info.
+
+Before use this tool, please read these tips below.
+
+1.  In order to extract search results from soso.com, you would need a html 
+parser, I have used BeautifulSoup. therefore, you need install 
+BeautifulSoup in your python. For more information about BeautifuleSoup, please
+visit:
+        http://www.crummy.com/software/BeautifulSoup/
+
+2.  The basic use of this tool
+        $python sosearch.py 'your query key words' 
+it will return about ALL the extracted results. It's very easy to modify to meet your needs.
+
+3. If there are any problems or bugs about this tool, please contact me.
+        Email: kjpioo2006@gmail.com 
+
+4. Note this script is released under MIT license.
