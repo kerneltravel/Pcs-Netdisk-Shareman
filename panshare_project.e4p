@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-4.6.dtd">
-<!-- eric4 project file for project pyqt_APPframework -->
-<!-- Saved: 2013-08-03, 10:39:02 -->
+<!-- eric4 project file for project panshare_project -->
+<!-- Saved: 2013-09-22, 19:45:59 -->
 <!-- Copyright (C) 2013 demo, demo@mail.com -->
 <Project version="4.6">
   <Language></Language>
   <ProgLanguage mixed="0">Python</ProgLanguage>
-  <ProjectType>Qt4</ProjectType>
+  <ProjectType>PySide</ProjectType>
   <Description>this is a pyqt app app-framework for quick-starting.</Description>
   <Version>0.1</Version>
   <Author>demo</Author>
@@ -19,6 +19,8 @@
     <Source>src/c/__init__.py</Source>
     <Source>src/m/mydatawrapper.py</Source>
     <Source>src/m/__init__.py</Source>
+    <Source>src/m/SosoSearchCrawler/sosearch.py</Source>
+    <Source>src/m/SosoSearchCrawler/__init__.py</Source>
   </Sources>
   <Forms>
     <Form>src/ui/designer_generated.ui</Form>
@@ -31,7 +33,6 @@
   </Interfaces>
   <Others>
   </Others>
-  <MainScript></MainScript>
   <Vcs>
     <VcsType>None</VcsType>
   </Vcs>

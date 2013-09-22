@@ -9,8 +9,8 @@
 # soso.com search results crawler 
 
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
 
 import urllib2, socket, time
 import re, random, types
@@ -188,18 +188,23 @@ class GoogleAPI:
                 continue
         return search_results
         
-def test():
+def test(query=''):
+    '''
     if(len(sys.argv) < 2):
         print 'please enter search query.'
         return
     query = sys.argv[1]
+    '''
+    if query =="":
+        return
     api = GoogleAPI()
     result = api.search(query)
     for r in result:
         r.printIt()
     print 'result len: %d'%len(result)
+    return result
     #result_s = set(result)
     #print 'result len: %d'%len(result_s)
 
 if __name__ == '__main__':
-    test()
+    test('')

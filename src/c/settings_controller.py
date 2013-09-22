@@ -18,21 +18,22 @@ from PySide.QtGui import QApplication, QMainWindow, QTableWidgetItem, QKeyEvent,
 from PySide.QtCore import Signal as pyqtSignal
 from PySide.QtCore import Slot as pyqtSlot
 
-from ui.Ui_designer_generated import Ui_Settings
+from ui.Ui_designer_generated import Ui_PanSearcher
 from m.mydatawrapper import MyDataWrapper
-class Settings(QDialog, Ui_Settings):
+from m.SosoSearchCrawler.sosearch import test
+class Settings(QDialog, Ui_PanSearcher):
     """
     Class documentation goes here.
     """
     def __init__(self, parent=None):
         super(Settings,self).__init__(parent)
         self.setupUi(self)      
-        self.initData()
+        #self.initData()
         self.initUi()
         
     def initUi(self):
         #QTimer.singleShot(0,self.searchWords,QtCore.SLOT(self.searchWords.setFocus()))
-        self.tblPcsSet.setRowCount(self.maxRowCount);
+        #self.tblPcsSet.setRowCount(self.maxRowCount);
         pass
         
     def initData(self):
@@ -47,6 +48,25 @@ class Settings(QDialog, Ui_Settings):
         self.tblPcsSet.setItem(self.curRow, 0, newItem);
         self.curRow += 1
     pass
+    
+    @pyqtSlot()
+    def on_btnStartSearch_clicked(self):
+        results = test( self.lnedtKeyword.text() )
+        if len(results)>0:
+            self.populateUiSearchResult(results)
+    
+    def populateUiSearchResult(self, results):
+        self.tblSearchResult.setRowCount(len(results))
+        
+        pass
+'''
+url     -> http://pan.baidu.com/share/link?fid=358851085&shareid=4174481751&uk=2
+804095996
+title   -> ubuntu-13.04-server-i386.iso_免费高速下载|百度云 网盘-分享无限制
+content -> 文件名:ubuntu-13.04-server-i386.iso 文件大小:688.66M 分享者:Jiessie_U
+ser 分享时间:2013-7-2 17:10 下载次数:406 路径:操作系统/ubuntu/ubuntu-13.04-serve
+r-i
+'''
     
 if __name__ == '__main__': 
     reload(sys)
