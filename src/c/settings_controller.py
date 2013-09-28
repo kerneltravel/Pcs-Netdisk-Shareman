@@ -63,6 +63,16 @@ class Settings(QDialog, Ui_PanSearcher):
             newItem = QTableWidgetItem()
             newItem.setCheckState(Qt.Unchecked)
             self.tblSearchResult.setItem(row, 0, newItem)
+            
+            newTitle = QTableWidgetItem(results[row].getTitle().split("_免费高速下载")[0])
+            self.tblSearchResult.setItem(row, 1, newTitle)
+            
+            newDesc = QTableWidgetItem(results[row].getContent().split(" 分享者")[0])
+            self.tblSearchResult.setItem(row, 2, newDesc)
+            
+            newUrl = QTableWidgetItem(results[row].getURL())
+            self.tblSearchResult.setItem(row, 3, newUrl)
+            
         pass
 '''
 url     -> http://pan.baidu.com/share/link?fid=358851085&shareid=4174481751&uk=2

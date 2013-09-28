@@ -41,19 +41,19 @@ class SearchResult:
         self.content = '' 
 
     def getURL(self):
-        return self.url
+        return self.url.decode('utf-8')
 
     def setURL(self, url):
         self.url = url 
 
     def getTitle(self):
-        return self.title
+        return self.title.decode('utf-8')
 
     def setTitle(self, title):
         self.title = title
 
     def getContent(self):
-        return self.content
+        return self.content.decode('utf-8')
 
     def setContent(self, content):
         self.content = content
