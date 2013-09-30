@@ -102,6 +102,18 @@
      </item>
      <item>
       <widget class="QTableWidget" name="tblSearchResult">
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="showGrid">
+        <bool>false</bool>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
        <attribute name="horizontalHeaderStretchLastSection">
         <bool>true</bool>
        </attribute>

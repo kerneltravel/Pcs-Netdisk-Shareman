@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'D:\tmp\baidu\pcs_auto_downloader\pyqt_APPframework_mvc\src\ui\designer_generated.ui'
 #
-# Created: Sun Sep 22 19:42:19 2013
+# Created: Mon Sep 30 16:45:11 2013
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -54,6 +54,9 @@ class Ui_PanSearcher(object):
         self.horizontalLayout_2.addWidget(self.ckbxSelectAll)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.tblSearchResult = QtGui.QTableWidget(PanSearcher)
+        self.tblSearchResult.setAutoFillBackground(True)
+        self.tblSearchResult.setAlternatingRowColors(True)
+        self.tblSearchResult.setShowGrid(False)
         self.tblSearchResult.setObjectName("tblSearchResult")
         self.tblSearchResult.setColumnCount(4)
         self.tblSearchResult.setRowCount(0)
@@ -84,6 +87,7 @@ class Ui_PanSearcher(object):
         self.label_3.setText(QtGui.QApplication.translate("PanSearcher", "find", None, QtGui.QApplication.UnicodeUTF8))
         self.btnStartSearch.setText(QtGui.QApplication.translate("PanSearcher", "GO", None, QtGui.QApplication.UnicodeUTF8))
         self.ckbxSelectAll.setText(QtGui.QApplication.translate("PanSearcher", "All", None, QtGui.QApplication.UnicodeUTF8))
+        self.tblSearchResult.setSortingEnabled(True)
         self.tblSearchResult.horizontalHeaderItem(0).setText(QtGui.QApplication.translate("PanSearcher", "select", None, QtGui.QApplication.UnicodeUTF8))
         self.tblSearchResult.horizontalHeaderItem(1).setText(QtGui.QApplication.translate("PanSearcher", "name", None, QtGui.QApplication.UnicodeUTF8))
         self.tblSearchResult.horizontalHeaderItem(2).setText(QtGui.QApplication.translate("PanSearcher", "desc.", None, QtGui.QApplication.UnicodeUTF8))

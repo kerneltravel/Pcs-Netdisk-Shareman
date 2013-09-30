@@ -3,7 +3,7 @@ class MyDataWrapper():
     def __init__(self, data):
         pass
     
-    def getDownloadLink(url):
+    def getDownloadLink(self, url):
         import re
         from json import dumps
         match = re.search(r'http:\/\/(?:pan|yun).baidu.com\/share\/link\?shareid=(\d+)&uk=(\d+)',url)
@@ -28,43 +28,35 @@ class MyDataWrapper():
                 print reg;
                 match = re.search(reg,html_code,re.MULTILINE)
                 if(match):
-                    return dumps({
+                    return {
                             _url : url,
                             _id:id,
                             _uk:uk,
                             _error:False,
                             _link:match.group(1).replace("\\",""),
                             _type:type_baidu
-                            },
-                            skipkeys=True
-                    )
+                            }
                 else:
-                    return dumps({
+                    return {
                             _url:url,
                             _id:id,
                             _uk:uk,
                             _error:True,
                             _type:type_baidu
-                            },
-                            skipkeys=True
-                        )
+                            }
             else:
-                return dumps({
+                return {
                     _url : url,
                     _id:id,
                     _uk:uk,
                     _error:True,
                     _type:type_baidu
-                    },
-                    skipkeys=True
-                )
+                    }
         else:
-            return dumps({
+            return {
                     _url : url,
                     _id:id,
                     _uk:uk,
                     _error : True,
                     _type : type_baidu
-                    },
-                    skipkeys=True
-                )
+                    }

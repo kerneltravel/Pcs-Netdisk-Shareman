@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Project SYSTEM "Project-4.6.dtd">
 <!-- eric4 project file for project panshare_project -->
-<!-- Saved: 2013-09-22, 19:45:59 -->
+<!-- Saved: 2013-09-28, 23:53:27 -->
 <!-- Copyright (C) 2013 demo, demo@mail.com -->
 <Project version="4.6">
   <Language></Language>
@@ -21,9 +21,12 @@
     <Source>src/m/__init__.py</Source>
     <Source>src/m/SosoSearchCrawler/sosearch.py</Source>
     <Source>src/m/SosoSearchCrawler/__init__.py</Source>
+    <Source>src/ui/Ui_links_dialog.py</Source>
+    <Source>src/c/linksdialog_controller.py</Source>
   </Sources>
   <Forms>
     <Form>src/ui/designer_generated.ui</Form>
+    <Form>src/ui/links_dialog.ui</Form>
   </Forms>
   <Translations>
   </Translations>
