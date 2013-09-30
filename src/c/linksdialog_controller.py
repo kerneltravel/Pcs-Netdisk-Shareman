@@ -33,8 +33,9 @@ class Links_dialog(QDialog, Ui_linksDialog):
         #QTimer.singleShot(0,self.searchWords,QtCore.SLOT(self.searchWords.setFocus()))
         #self.tblPcsSet.setRowCount(self.maxRowCount);
         self.txteditLinks.setPlainText(content)
+        self.txteditLinks.setReadOnly(True)
         pass
-        
+    
     def initData(self):
         pass
     

@@ -42,10 +42,11 @@ class Settings(QDialog, Ui_PanSearcher):
         self.data = MyDataWrapper("")
         self.linksDialog = None
         self.aboutDialog = None
-        self.author = "kjpioo2006 # gmail.com"
-        self.thanksto = "daimajia and meibenjin"
-        self.license = "MIT license"
-        self.about = '''A baidu yun file-share download links getter.\n\n\tAuthor:%s\n\tThanks to %s\n\n\tLicense: %s'''%(self.author, self.thanksto, self.license)
+        self.author = self.tr("kjpioo2006 # gmail.com")
+        self.thanksto = self.tr("daimajia and meibenjin")
+        self.license = self.tr("MIT license")
+        self.ver = "0.1.0"
+        self.about = self.tr('A baidu yun file-share download links getter. Version:%s\n\n\tAuthor:%s\n\tThanks to %s\n\n\tLicense: %s'%(self.ver, self.author, self.thanksto, self.license))
         pass
 
     @pyqtSlot(int)
@@ -70,6 +71,7 @@ class Settings(QDialog, Ui_PanSearcher):
     @pyqtSlot()
     def on_btnAbout_clicked(self):
         self.aboutDialog = Links_dialog(self.about)
+        self.aboutDialog.setWindowTitle(self.tr("About"))
         self.aboutDialog.show()
         pass
     
