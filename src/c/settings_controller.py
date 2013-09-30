@@ -51,6 +51,16 @@ class Settings(QDialog, Ui_PanSearcher):
         self.curRow += 1
     pass
     
+    @pyqtSlot(int)
+    def on_ckbxSelectAll_stateChanged(self, stat):
+        allCheckState = set([Qt.Unchecked, Qt.Checked])
+        #use a workaround for "PySide.QtGui.QTableWidgetItem.setCheckState(int)" error
+        checkedState = (allCheckState -(allCheckState - set([stat]))).pop()
+        #print 'stat:%d'%stat
+        for row in range(self.tblSearchResult.rowCount()):
+            self.tblSearchResult.item(row, 0 ).setCheckState(checkedState)
+        pass
+    
     @pyqtSlot()
     def on_btnStartSearch_clicked(self):
         if(self.tblSearchResult.rowCount()>0):
@@ -67,11 +77,9 @@ class Settings(QDialog, Ui_PanSearcher):
         links_text = ""
         for row in range(self.tblSearchResult.rowCount()):
             if( self.tblSearchResult.item(row, 0 ).checkState() is Qt.Checked ):
-                print '--row: %d'%row
                 downloadlink = self.data.getDownloadLink(self.tblSearchResult.item(row, 3).text())
-                #print "%d is checked :%s"%(row, downloadlink['link'])
                 links_text += (downloadlink['link']+'\n')
-                print links_text
+                #print links_text
             else:
                 print 'row: %d'%row
         self.linksdialog = Links_dialog(links_text.strip())
@@ -95,8 +103,6 @@ class Settings(QDialog, Ui_PanSearcher):
             
             newUrl = QTableWidgetItem(results[row].getURL())
             self.tblSearchResult.setItem(row, 3, newUrl)
-        
-        self.tblSearchResult.auto
         pass
 '''
 url     -> http://pan.baidu.com/share/link?fid=358851085&shareid=4174481751&uk=2
