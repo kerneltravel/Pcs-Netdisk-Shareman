@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'D:\tmp\baidu\pcs_auto_downloader\pyqt_APPframework_mvc\src\ui\designer_generated.ui'
 #
-# Created: Mon Sep 30 16:45:11 2013
+# Created: Mon Sep 30 23:44:01 2013
 #      by: pyside-uic 0.2.15 running on PySide 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -41,6 +41,8 @@ class Ui_PanSearcher(object):
         self.label_3.setObjectName("label_3")
         self.horizontalLayout.addWidget(self.label_3)
         self.lnedtKeyword = QtGui.QLineEdit(PanSearcher)
+        self.lnedtKeyword.setInputMask("")
+        self.lnedtKeyword.setText("")
         self.lnedtKeyword.setObjectName("lnedtKeyword")
         self.horizontalLayout.addWidget(self.lnedtKeyword)
         self.btnStartSearch = QtGui.QPushButton(PanSearcher)
@@ -85,6 +87,7 @@ class Ui_PanSearcher(object):
         self.btnDownSelected.setText(QtGui.QApplication.translate("PanSearcher", "download Selected", None, QtGui.QApplication.UnicodeUTF8))
         self.btnAbout.setText(QtGui.QApplication.translate("PanSearcher", "About", None, QtGui.QApplication.UnicodeUTF8))
         self.label_3.setText(QtGui.QApplication.translate("PanSearcher", "find", None, QtGui.QApplication.UnicodeUTF8))
+        self.lnedtKeyword.setPlaceholderText(QtGui.QApplication.translate("PanSearcher", "e.g.: ubuntu-12.04.3*.iso", None, QtGui.QApplication.UnicodeUTF8))
         self.btnStartSearch.setText(QtGui.QApplication.translate("PanSearcher", "GO", None, QtGui.QApplication.UnicodeUTF8))
         self.ckbxSelectAll.setText(QtGui.QApplication.translate("PanSearcher", "All", None, QtGui.QApplication.UnicodeUTF8))
         self.tblSearchResult.setSortingEnabled(True)

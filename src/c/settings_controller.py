@@ -46,7 +46,7 @@ class Settings(QDialog, Ui_PanSearcher):
         self.thanksto = self.tr("daimajia and meibenjin")
         self.license = self.tr("MIT license")
         self.ver = "0.1.0"
-        self.about = self.tr('A baidu yun file-share download links getter. Version:%s\n\n\tAuthor:%s\n\tThanks to %s\n\n\tLicense: %s'%(self.ver, self.author, self.thanksto, self.license))
+        self.about = self.tr("A baidu yun file-share download links getter. Version:{0}\n\n\tAuthor:{1}\n\tThanks to {2}\n\n\tLicense: {3}").format(self.ver, self.author, self.thanksto, self.license)
         pass
 
     @pyqtSlot(int)
