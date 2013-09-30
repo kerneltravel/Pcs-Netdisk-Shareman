@@ -88,6 +88,7 @@ class Settings(QDialog, Ui_PanSearcher):
             else:
                 print 'row: %d'%row
         self.linksDialog = Links_dialog(links_text.strip())
+        self.linksDialog.setWindowTitle(self.tr("Selected Download Links for copying"))
         self.linksDialog.show()
     
     def populateUiSearchResult(self, results):

@@ -111,5 +111,10 @@
         <source>About</source>
         <translation>关于</translation>
     </message>
+    <message>
+        <location filename="settings_controller.py" line="91"/>
+        <source>Selected Download Links for copying</source>
+        <translation>选中的文件下载地址（请复制）</translation>
+    </message>
 </context>
 </TS>
