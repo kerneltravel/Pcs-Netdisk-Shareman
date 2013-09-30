@@ -39,18 +39,15 @@ class Settings(QDialog, Ui_PanSearcher):
         pass
         
     def initData(self):
-        self.data = MyDataWrapper("hello world!")
-        self.linksdialog = None
+        self.data = MyDataWrapper("")
+        self.linksDialog = None
+        self.aboutDialog = None
+        self.author = "kjpioo2006 # gmail.com"
+        self.thanksto = "daimajia and meibenjin"
+        self.license = "MIT license"
+        self.about = '''A baidu yun file-share download links getter.\n\n\tAuthor:%s\n\tThanks to %s\n\n\tLicense: %s'''%(self.author, self.thanksto, self.license)
         pass
-        
-    @pyqtSlot()
-    def on_btnAddPcsApp_clicked(self):
-        newItem = QTableWidgetItem()
-        newItem.setCheckState(Qt.Unchecked)
-        self.tblPcsSet.setItem(self.curRow, 0, newItem);
-        self.curRow += 1
-    pass
-    
+
     @pyqtSlot(int)
     def on_ckbxSelectAll_stateChanged(self, stat):
         allCheckState = set([Qt.Unchecked, Qt.Checked])
@@ -69,6 +66,12 @@ class Settings(QDialog, Ui_PanSearcher):
         results = test( self.lnedtKeyword.text() )
         if len(results)>0:
             self.populateUiSearchResult(results)
+            
+    @pyqtSlot()
+    def on_btnAbout_clicked(self):
+        self.aboutDialog = Links_dialog(self.about)
+        self.aboutDialog.show()
+        pass
     
     @pyqtSlot()
     def on_btnGetLinks_clicked(self):
@@ -82,8 +85,8 @@ class Settings(QDialog, Ui_PanSearcher):
                 #print links_text
             else:
                 print 'row: %d'%row
-        self.linksdialog = Links_dialog(links_text.strip())
-        self.linksdialog.show()
+        self.linksDialog = Links_dialog(links_text.strip())
+        self.linksDialog.show()
     
     def populateUiSearchResult(self, results):
         self.tblSearchResult.clearContents()
