@@ -3,11 +3,11 @@
 # Form implementation generated from reading ui file 'D:\tmp\baidu\pcs_auto_downloader\pyqt_APPframework_mvc\src\ui\links_dialog.ui'
 #
 # Created: Sat Sep 28 22:35:24 2013
-#      by: pyside-uic 0.2.15 running on PySide 1.2.1
+#      by: pyside-uic 0.2.15 running on PyQt4 1.2.1
 #
 # WARNING! All changes made in this file will be lost!
 
-from PySide import QtCore, QtGui
+from PyQt4 import QtCore, QtGui
 
 class Ui_linksDialog(object):
     def setupUi(self, linksDialog):

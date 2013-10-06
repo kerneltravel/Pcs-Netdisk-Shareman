@@ -8,15 +8,15 @@ import sys
 #print sys.getdefaultencoding()
 from ctypes import *
 
-from PySide import QtGui
-from PySide.QtGui import *
-from PySide import QtCore
-from PySide.QtCore import Qt, QPoint, QTime, QTimer, QTextCodec
-from PySide.QtCore import QTextDecoder, QByteArray
-from PySide.QtGui import QApplication, QMainWindow, QTableWidgetItem, QKeyEvent, QTextCursor
+from PyQt4 import QtGui
+from PyQt4.QtGui import *
+from PyQt4 import QtCore
+from PyQt4.QtCore import Qt, QPoint, QTime, QTimer, QTextCodec
+from PyQt4.QtCore import QTextDecoder, QByteArray
+from PyQt4.QtGui import QApplication, QMainWindow, QTableWidgetItem, QKeyEvent, QTextCursor
 
-from PySide.QtCore import Signal as pyqtSignal
-from PySide.QtCore import Slot as pyqtSlot
+#from PyQt4.QtCore import Signal as pyqtSignal
+#from PyQt4.QtCore import Slot as pyqtSlot
 
 from ui.Ui_designer_generated import Ui_PanSearcher
 from m.mydatawrapper import MyDataWrapper
@@ -52,7 +52,7 @@ class Settings(QDialog, Ui_PanSearcher):
     @pyqtSlot(int)
     def on_ckbxSelectAll_stateChanged(self, stat):
         allCheckState = set([Qt.Unchecked, Qt.Checked])
-        #use a workaround for "PySide.QtGui.QTableWidgetItem.setCheckState(int)" error
+        #use a workaround for "PyQt4.QtGui.QTableWidgetItem.setCheckState(int)" error
         checkedState = (allCheckState -(allCheckState - set([stat]))).pop()
         #print 'stat:%d'%stat
         for row in range(self.tblSearchResult.rowCount()):

@@ -8,15 +8,15 @@ import sys
 #print sys.getdefaultencoding()
 from ctypes import *
 
-from PySide import QtGui
-from PySide.QtGui import *
-from PySide import QtCore
-from PySide.QtCore import Qt, QPoint, QTime, QTimer, QTextCodec
-from PySide.QtCore import QTextDecoder, QByteArray
-from PySide.QtGui import QApplication, QMainWindow, QTableWidgetItem, QKeyEvent, QTextCursor
+from PyQt4 import QtGui
+from PyQt4.QtGui import *
+from PyQt4 import QtCore
+from PyQt4.QtCore import Qt, QPoint, QTime, QTimer, QTextCodec
+from PyQt4.QtCore import QTextDecoder, QByteArray
+from PyQt4.QtGui import QApplication, QMainWindow, QTableWidgetItem, QKeyEvent, QTextCursor
 
-from PySide.QtCore import Signal as pyqtSignal
-from PySide.QtCore import Slot as pyqtSlot
+#from PyQt4.QtCore import Signal as pyqtSignal
+#from PyQt4.QtCore import Slot as pyqtSlot
 
 from ui.Ui_links_dialog import Ui_linksDialog
 class Links_dialog(QDialog, Ui_linksDialog):
