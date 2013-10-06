@@ -14,8 +14,8 @@ import sys
 
 import urllib2, socket, time
 import re, random, types
-
-from bs4 import BeautifulSoup 
+#import BeautifulSoup as bs4
+from BeautifulSoup import BeautifulSoup 
 
 base_url = 'http://www.soso.com'
 
