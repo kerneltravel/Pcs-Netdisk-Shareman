@@ -64,7 +64,7 @@ class Settings(QDialog, Ui_PanSearcher):
         if(self.tblSearchResult.rowCount()>0):
             self.tblSearchResult.clearContents()
         
-        results = test( self.lnedtKeyword.text() )
+        results = test( str(self.lnedtKeyword.text().toUtf8()) )
         if len(results)>0:
             self.populateUiSearchResult(results)
             
