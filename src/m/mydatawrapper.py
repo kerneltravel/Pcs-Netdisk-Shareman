@@ -6,7 +6,8 @@ class MyDataWrapper():
     def getDownloadLink(self, url):
         import re
         from json import dumps
-        match = re.search(r'http:\/\/(?:pan|yun).baidu.com\/share\/link\?shareid=(\d+)&uk=(\d+)',url)
+        match = re.search(r'http:\/\/(?:pan|yun).baidu.com\/share\/link\?(.*)shareid=(\d+)(.*)&uk=(\d+)(.*)',url)
+        _url,_id,_uk,_error,_link,_type,type_baidu ="url","id","uk","error","link","type","baidu"
         if(match):
             import urllib2
             id = match.group(1)
@@ -20,12 +21,12 @@ class MyDataWrapper():
             #"md5\":\"88296788f23f16396e05e75a037bac00\"
             md5_match = re.search(r'"md5\\":\\\"(.+?)\\"',html_code)
 
-            _url,_id,_uk,_error,_link,_type,type_baidu ="url","id","uk","error","link","type","baidu"
+            #_url,_id,_uk,_error,_link,_type,type_baidu ="url","id","uk","error","link","type","baidu"
             if(md5_match):
                 md5 = md5_match.group(1)
                 #dlink\\":.+?(http.+?88296788f23f16396e05e75a037bac00\?.+?sh=1)
                 reg = 'dlink\\\\":.+?(http.+?' + md5 + '\?.+?sh=1)'
-                print reg;
+                print reg,' ',url;
                 match = re.search(reg,html_code,re.MULTILINE)
                 if(match):
                     return {
@@ -37,6 +38,10 @@ class MyDataWrapper():
                             _type:type_baidu
                             }
                 else:
+                    '''有的页面虽然能通过shareid和uk组成的url访问，但是已经取消分享。
+                    会提示“啊哦，你来晚了，分享的文件已经被取消了，下次要早点哟。”。 所以这里过滤掉这些页面。
+                    不生成link字段。
+                    '''
                     return {
                             _url:url,
                             _id:id,
@@ -53,10 +58,12 @@ class MyDataWrapper():
                     _type:type_baidu
                     }
         else:
+            #print 'match: %d'%match
+            print 'url:%s'%url
             return {
                     _url : url,
-                    _id:id,
-                    _uk:uk,
+                    #_id:id,
+                    #_uk:uk,
                     _error : True,
                     _type : type_baidu
                     }

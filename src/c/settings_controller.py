@@ -83,7 +83,9 @@ class Settings(QDialog, Ui_PanSearcher):
         for row in range(self.tblSearchResult.rowCount()):
             if( self.tblSearchResult.item(row, 0 ).checkState() is Qt.Checked ):
                 downloadlink = self.data.getDownloadLink(self.tblSearchResult.item(row, 3).text())
-                links_text += (downloadlink['link']+'\n')
+                '''只处理带有可用link的对象'''
+                if 'link' in downloadlink:
+                    links_text += (downloadlink['link']+'\n')
                 #print links_text
             else:
                 print 'row: %d'%row
